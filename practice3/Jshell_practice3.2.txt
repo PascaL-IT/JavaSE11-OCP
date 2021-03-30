@@ -1,0 +1,57 @@
+// Math and BigDecimal exercices
+
+System.out.println("\nA) -- Math & double --");
+double price = 1.85;
+double rate = 0.065;  // discount rate
+
+System.out.println("price = " + bdPrice );
+System.out.println("rate = " + bdRate );
+
+price -= price * rate;
+System.out.println("1) new price = " + price );
+
+price = Math.round(price * 100)/100.0;
+System.out.println("2) rounded price = " + price );
+
+
+// ===
+System.out.println("\nB) -- BigDecimal --");
+
+BigDecimal bdPrice = BigDecimal.valueOf(1.85);
+BigDecimal bdRate = BigDecimal.valueOf(0.065);
+
+System.out.println("price = " + bdPrice );
+System.out.println("rate = " + bdRate );
+
+// bdPrice = bdPrice.subtract(bdPrice.multiply(bdRate));
+bdPrice = bdPrice.subtract(bdPrice.multiply(bdRate)).setScale(2, RoundingMode.HALF_UP);
+System.out.println("1) new price = " + price );
+
+
+// ===
+System.out.println("\nB) -- Locale & Number format --");
+
+import java.text.NumberFormat;
+import java.util.Locale;
+
+Locale currentLocale = Locale.getDefault();   // fr_BE
+Locale franceLocale = new Locale("fr","FR");  // fr_FR
+Locale locale = Locale.UK;  // en_GB (pre-defined)
+
+System.out.println("currentLocale = " + currentLocale );
+System.out.println("franceLocale = " + franceLocale );
+System.out.println("locale = " + locale );
+
+// locale = franceLocale; // currentLocale or franceLocale 
+NumberFormat nf = NumberFormat.getInstance(locale);
+NumberFormat currencyFormat = nf.getCurrencyInstance(); // NumberFormat.getCurrencyInstance(locale);
+NumberFormat percentFormat = nf.getPercentInstance(); // NumberFormat.getPercentInstance(locale);
+percentFormat.setMaximumFractionDigits(2);
+System.out.println("Currency for " + locale + " is " + currencyFormat );
+System.out.println("Percent for " + locale + " is " + percentFormat );
+
+
+System.out.println("price = " + price + " and rate = " + rate );
+String priceFormatted = currencyFormat.format(price);
+String rateFormatted = percentFormat.format(rate)
+System.out.println("Formatted price = " + priceFormatted + " and rate = " + rateFormatted );

@@ -1,0 +1,36 @@
+// if/else exercice
+
+char someChar = 'Y';
+
+if ( someChar >= 'a' && someChar <= 'z' ) {
+	someChar -= 32;
+} else if ( someChar >= 'A' && someChar <= 'Z' ) {
+	someChar += 32;
+}
+System.out.println("someChar = " + someChar)
+
+
+// someChar = someChar + 32;
+// fixed by casting...
+// someChar = (char) (someChar + 32);
+
+
+// if/else exercice in ternary form
+someChar = ( ( someChar >= 'a' && someChar <= 'z' ) ? (someChar -= 32) : (someChar += 32) )
+System.out.println("someChar = " + someChar)
+
+
+// Calculation with a switch operator
+int period = 4; // test with 1 or 3, 4
+System.out.println("period = " + period)
+float amount = 10;
+float rate = 0.05F;
+
+switch (period) {
+    case 4: amount += amount * 0.2F;
+			break;	
+	case 3: amount += amount * rate;
+	case 2: amount += amount * rate;
+	case 1: amount += amount * rate;
+}
+System.out.println("amount = " + amount)

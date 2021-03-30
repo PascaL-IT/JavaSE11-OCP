@@ -1,0 +1,19 @@
+// Resource Bundle exercices
+System.out.println("\nA) -- Resource Bundle  --");
+
+import java.util.ResourceBundle;
+import java.text.MessageFormat;
+
+Locale locale = Locale.UK  // en_GB
+Locale currentLocale = Locale.getDefault();   // fr_BE
+ResourceBundle messageResource = ResourceBundle.getBundle("messages", currentLocale);
+System.out.println("messageResource = " + messageResource);
+
+String offerPattern = messageResource.getString("offer");
+String offerMessage = MessageFormat.format(offerPattern, "Notre offre est ... ", "1000,50", "0.54", "3");
+System.out.println(offerMessage);
+
+ResourceBundle messageResource2 = ResourceBundle.getBundle("messages", locale);
+String offerPattern2 = messageResource2.getString("offer");
+String offerMessage2 = MessageFormat.format(offerPattern2, "Our offer is ... ", "1000,50", "0.54", "3");
+System.out.println(offerMessage2);

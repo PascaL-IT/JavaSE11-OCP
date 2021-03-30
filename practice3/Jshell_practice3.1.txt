@@ -1,0 +1,36 @@
+// String manipulation exercice
+String teaTxt = "Tea";
+String b = "Tea";
+String c = new String("Tea");
+String d = c.intern();
+
+teaTxt == b;
+System.out.println("teaTxt == b ? " + (teaTxt == b));
+System.out.println("teaTxt == c ? " + (teaTxt == c));
+System.out.println("teaTxt == d ? " + (teaTxt == d));
+
+System.out.println("teaTxt: " + System.identityHashCode(teaTxt) + " - " + teaTxt.hashCode());
+System.out.println("b: " + System.identityHashCode(b) + " - " + b.hashCode());
+System.out.println("c: " + System.identityHashCode(c) + " - " + c.hashCode());
+System.out.println("d: " + System.identityHashCode(d) + " - " + d.hashCode());
+
+
+c = teaTxt + " " + b; // "Tea Tea"
+c.indexOf('T');       //  0
+c.indexOf('T',1);     //      4
+c.lastIndexOf('T');   //      4
+c.charAt(c.length()-1); // 'a' is the last character of String c
+c = c.toLowerCase(); 
+c = c.toUpperCase(); 
+c = c.substring( c.lastIndexOf('T') , c.lastIndexOf('T') + 2 );
+c = c.substring(2,6); // "Tea Tea"
+                      //  012 456
+					  
+// StringBuilder manipulation exercice
+c = "Tea Tea";
+StringBuilder txt = new StringBuilder(c);
+txt.length();    // 7
+txt.capacity();  // 16 + 7 = 23
+txt.replace(0,3,"What is the price of");
+txt.length();    // 24
+txt.capacity();  // 48 

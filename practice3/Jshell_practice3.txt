@@ -1,0 +1,47 @@
+// String manipulation exercice
+String a = "Hello World";
+int l = a.length();
+System.out.println(a + " is length = " + l);
+String b = a.substring(0,5);
+System.out.println(b + " is length = " + b.length());
+
+
+// LocalDateTime manipulation exercice
+import java.time.*;
+
+LocalDateTime ldtNow = LocalDateTime.now();
+System.out.println("\nldtNow is " + ldtNow);
+LocalDateTime ldtNext =  ldtNow.plusHours(10);  // ldtNow.withMinute(14).withDayOfMonth(3).plusHours(12);
+System.out.println("ldtNext is " + ldtNext);
+
+
+// Zoned Date Time and Id exercices
+ZoneId zi = ZoneId.systemDefault();
+System.out.println("System default zone id is " + zi);
+ZonedDateTime zdt = ZonedDateTime.of(ldtNow, zi);
+System.out.println("Zone date time of now is " + zdt);
+
+
+// Languages and Countries exercices
+Locale l = Locale.getDefault();
+System.out.println("Default locale on this computer is " + l);
+
+
+// Number Format exercices
+import java.text.NumberFormat;
+NumberFormat currency = NumberFormat.getCurrencyInstance(l);
+NumberFormat percentage = NumberFormat.getPercentInstance(l);
+NumberFormat number = NumberFormat.getNumberInstance(l);
+System.out.println("Currency format is " + currency.format((double) 3.141516));
+System.out.println("Percentage format is " + percentage.format((float) 0.2d));
+System.out.println("Number format is " + number.format((int) 12345));
+
+
+// Date Time Format exercices - https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
+DateTimeFormatter dtFormat = DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL).localizedBy(l); // FULL - LONG - MEDIUM - SHORT
+System.out.println("Formatted date is " + ldtNext.toLocalDate().format(dtFormat));
+
+
+// Localized Resource

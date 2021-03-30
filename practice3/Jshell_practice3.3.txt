@@ -1,0 +1,68 @@
+// Date and Time exercices
+
+System.out.println("\nA) -- Date, Time and Duration --");
+
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.LocalDateTime;
+import java.time.Duration;
+import java.time.Period;
+import java.time.Instant;
+import java.time.DayOfWeek;
+
+LocalDate today = LocalDate.now();
+System.out.println("today = " + today);
+
+DayOfWeek dow = today.plusYears(1).getDayOfWeek();
+System.out.println("today.plusYears(1).getDayOfWeek() = " + dow);
+
+LocalTime teaTime = LocalTime.of(17,30);
+LocalTime now = LocalTime.now();
+Duration timeGap = Duration.between(now, teaTime);
+
+System.out.println("now is " + now);
+System.out.println("teaTime is " + teaTime);
+System.out.println("timeGap is " + timeGap);
+System.out.println("timeGap.toMinutes() = " + timeGap.toMinutes() );
+System.out.println("timeGap.toHours() = " + timeGap.toHours() );
+System.out.println("timeGap.toMinutesPart() = " + timeGap.toMinutesPart() );
+
+LocalDateTime tomorrowTeaTime = LocalDateTime.of(today.plusDays(1), teaTime);
+System.out.println("tomorrowTeaTime = " + tomorrowTeaTime );
+
+
+System.out.println("\nB) -- Zone Date and Time --");
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
+
+ZoneId london = ZoneId.of("Europe/London");
+ZoneId virton = ZoneId.of("Europe/Brussels");
+ZoneId katmandu = ZoneId.of("Asia/Katmandu");
+
+System.out.println("london = " + london );
+System.out.println("virton = " + virton );
+System.out.println("katmandu = " + katmandu );
+
+ZonedDateTime londonTeaTime = ZonedDateTime.of(tomorrowTeaTime, london);
+ZonedDateTime virtonTeaTime = ZonedDateTime.of(tomorrowTeaTime, virton);
+ZonedDateTime katmanduTeaTime = ZonedDateTime.of(tomorrowTeaTime, katmandu);
+
+System.out.println("londonTeaTime = " + londonTeaTime );
+System.out.println("virtonTeaTime = " + virtonTeaTime );
+System.out.println("katmanduTeaTime = " + katmanduTeaTime );
+
+//                  WeekDay , Days of Month Year at Hours Minutes zone
+String datePattern = "EE', 'd' of 'MMMM yyyy' at 'HH:mm z";
+DateTimeFormatter dtf = DateTimeFormatter.ofPattern(datePattern, locale);
+String formattedTime = dtf.format(londonTeaTime);
+System.out.println("locale = " + locale);
+System.out.println("formattedTime = " + formattedTime);
+
+
+String datePatternBE = "EEE, d MMM yyyy HH:mm:ss Z";
+Locale currentLocale = Locale.getDefault();   // fr_BE
+DateTimeFormatter dtfFrBE = DateTimeFormatter.ofPattern(datePatternBE, currentLocale);
+String formattedTimeFrBE = dtfFrBE.format(virtonTeaTime);
+System.out.println("formattedTimeFrBE = " + formattedTimeFrBE);
+
