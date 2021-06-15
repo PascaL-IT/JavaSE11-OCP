@@ -1,0 +1,3 @@
+
+Rapport sur le produit (FR):  French Ham, prix: 1,75 €, évaluation: ☆☆☆☆☆, date de péremption: 17/04/2021, id: 3'
+revue: 1	niveau: ☆☆☆☆☆	commentaires: a review of productId=3 with rating=☆☆☆☆☆

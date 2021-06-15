@@ -1,0 +1,4 @@
+
+Rapport sur le produit (FR):  Coca-Cola, prix: 5,65 €, évaluation: ★★☆☆☆, date de péremption: 21/04/2021, id: 4'
+revue: 1	niveau: ★★☆☆☆	commentaires: a review of productId=4 with rating=★★☆☆☆
+revue: 2	niveau: ★★☆☆☆	commentaires: a review of productId=4 with rating=★★☆☆☆

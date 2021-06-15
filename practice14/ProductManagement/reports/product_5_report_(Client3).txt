@@ -1,0 +1,3 @@
+
+Rapport sur le produit (BE): Hamburger, prix: ￥9, évaluation: ☆☆☆☆☆, date de péremption: 21/04/2021, id: 5'
+Revue n°1	niveau: ☆☆☆☆☆	commentaires: a review of productId=5 with rating=☆☆☆☆☆

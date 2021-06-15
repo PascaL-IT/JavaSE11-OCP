@@ -1,0 +1,6 @@
+
+Rapport sur le produit (BE): White Tea, prix: 2,50 €, évaluation: ★★★★☆, date de péremption: 18/04/2021, id: 1'
+Revue n°1	niveau: ★★★☆☆	commentaires: standard tea 
+Revue n°2	niveau: ★★☆☆☆	commentaires: expect better
+Revue n°3	niveau: ★☆☆☆☆	commentaires: poor tea
+: poor tea

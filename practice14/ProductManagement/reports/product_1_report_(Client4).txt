@@ -1,0 +1,6 @@
+
+Rapport sur le produit (FR):  White Tea, prix: 2,50 €, évaluation: ★★☆☆☆, date de péremption: 21/04/2021, id: 1'
+revue: 1	niveau: ★★★☆☆	commentaires: standard tea 
+revue: 2	niveau: ★★★☆☆	commentaires: a review of productId=1 with rating=★★★☆☆
+revue: 3	niveau: ★★☆☆☆	commentaires: expect better
+revue: 4	niveau: ★☆☆☆☆	commentaires: poor tea
