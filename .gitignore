@@ -1,0 +1,8 @@
+.metadata
+**/bin
+**/out
+**/target
+**/doc
+**/classes
+*.log
+*.class
